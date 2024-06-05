@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-form {
+.login-form {
   display: flex;
   flex-direction: column;
   background: var(--blue-light);
@@ -46,7 +46,7 @@ form {
   transform: translate(-50%, -50%);
 }
 
-input {
+.login-input {
   width: 15vw;
   padding: 20px;
   border: none;
@@ -61,6 +61,11 @@ input {
 .btn-form {
   color: var(--main-bg-color);
   background-color: var(--blue-dark);
+  width: 15vw;
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+  font: 16px sans-serif;
 
   &:hover {
     background-color: #5691bb;

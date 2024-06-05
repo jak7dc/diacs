@@ -1,0 +1,67 @@
+:root {
+  --main-bg-color: #e6f1fa;
+  --blue-light: #c7dff5;
+  --blue-midle: #95bad3;
+  --blue-dark: #1d6ea6;
+  --selected-color: #5691bb;
+
+}
+
+.content-navbar {
+  position: fixed;
+  width: 100%;
+  background-color: var(--blue-midle);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content-logo-navUp {
+  margin: 8px 20px;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0px 0px 24px white;
+}
+
+.logo-diacs-navUp {
+  width: 63px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-logout {
+  background: var(--blue-dark);
+  color: white;
+  border-style: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: max-content;
+  height: 45px;
+
+  &:hover {
+    background-color: var(--selected-color);
+  }
+}
+
+.log-logout {
+  width: max-content;
+  height: max-content;
+}
+
+.content-nav-rigth {
+  margin: 8px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+h2 {
+  margin: 0%;
+}

@@ -1,0 +1,81 @@
+:root {
+  --main-bg-color: #e6f1fa;
+  --blue-light: #c7dff5;
+  --blue-midle: #95bad3;
+  --blue-dark: #1d6ea6;
+  --selected-color: #5691bb;
+
+}
+
+.navbar-left {
+  position: fixed;
+  height: 100%;
+  width: 15%;
+  min-width: 155px;
+  background-color: var(--blue-light);
+  top: 66px;
+}
+
+.ul-nb-left {
+  padding: 0%;
+  margin: 0%;
+}
+
+/* ITEMS NO SELECTED */
+
+.li-nb-principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  cursor: pointer;
+
+}
+
+.li-nb-principal:hover {
+  border-left: white solid 5px;
+}
+
+.li-nb-principal div {}
+
+.li-nb-principal h3 {
+  padding: 10px 20px;
+  margin: 0.5rem;
+}
+
+/* ITEMS SELECTED */
+
+.li-nb-principal-select {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  cursor: pointer;
+  background-color: var(--blue-midle);
+}
+
+.li-nb-principal-select div {
+  border-left: white solid 5px;
+}
+
+.li-nb-principal-select h3 {
+  padding: 0px 20px;
+}
+
+
+
+
+/* SUB LISTA */
+.ul-nb-sublist {
+  list-style: none;
+  padding: 10px 20px 10px 40px;
+}
+
+.li-nb-sublist {
+  width: 100%;
+  padding: 6px;
+}
+
+.li-nb-sublist:hover {
+  border-left: white solid 3px;
+}

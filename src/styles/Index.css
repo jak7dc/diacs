@@ -4,4 +4,21 @@
 
 body {
   background-color: var(--main-bg-color);
+  margin: 0%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.content-dashboard {
+  position: relative;
+  flex-direction: column;
+  top: 66px;
+  left: 15vw;
+}
+
+@media (max-width: 1024px) {
+  .content-dashboard {
+    position: relative;
+    top: 66px;
+    left: 155px;
+  }
 }
