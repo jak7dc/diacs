@@ -11,7 +11,6 @@ export const Productos = () => {
     ['CEL 4 1', 'CEL 4 2', 'CEL 4 3', 'CEL 4 4', 'CEL 4 5'],
     ['CEL 5 1', 'CEL 5 2', 'CEL 5 3', 'CEL 5 4', 'CEL 5 5'],
   ]
-  const OPTIONS_SEARCH = ['id', 'referencia', 'nombre']
 
   return (
     <>
@@ -19,7 +18,7 @@ export const Productos = () => {
       <NavBarLeft />
       <div className='content-dashboard'>
         <div className='content-table'>
-          <ShowTable headers={DATA_TABLE_HEADERS} rows={DATA_TABLE_ROWS} options={OPTIONS_SEARCH} />
+          <ShowTable headers={DATA_TABLE_HEADERS} rows={DATA_TABLE_ROWS} />
         </div>
       </div>
     </>

@@ -13,6 +13,7 @@ body {
   flex-direction: column;
   top: 66px;
   left: 15vw;
+  width: 85vw;
 }
 
 @media (max-width: 1024px) {

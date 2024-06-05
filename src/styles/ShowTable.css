@@ -11,15 +11,19 @@ table.paleBlueRows {
   font-family: Arial, Helvetica, sans-serif;
   border: 1px solid #FFFFFF;
   width: 80vw;
-  height: 200px;
+  /* height: 200px; */
   text-align: left;
   border-collapse: collapse;
 }
 
-table.paleBlueRows td,
-table.paleBlueRows th {
+table.paleBlueRows td {
   border: 1px solid #FFFFFF;
   padding: 3px 2px;
+}
+
+table.paleBlueRows th {
+  border: 1px solid #FFFFFF;
+  padding: 9px 2px;
 }
 
 table.paleBlueRows tbody td {
@@ -84,4 +88,138 @@ table.paleBlueRows thead th:first-child {
 
 table.paleBlueRows tfoot td {
   font-size: 14px;
+}
+
+
+/* FORMULARIO DE BUSQUEDA */
+
+.form-search-table {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  padding: 0px 20px;
+  gap: 10px;
+}
+
+.container-form-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  padding: 10px 40px 20px 0px;
+}
+
+.btn-search-new {
+  border-style: none;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 1rem;
+  background-color: #0ebf13;
+  color: white;
+  width: 120px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #58c45e;
+  }
+}
+
+.form-search-table button,
+.form-search-table input,
+.form-search-table select {
+  border-style: none;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 1rem;
+
+  &:focus {
+    outline-style: none;
+  }
+}
+
+.form-search-table button {
+  background-color: #0ebf13;
+  color: white;
+  width: 120px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #58c45e;
+  }
+}
+
+.form-search-table input {
+  width: 300px;
+}
+
+
+/* FORMULARIO DE ITEMS */
+
+.form-items {
+  background-color: var(--blue-light);
+  border: 8px solid var(--main-bg-color);
+  padding: 15px;
+}
+
+.oculto {
+  border: none;
+  padding: 0px;
+  height: 0px;
+  overflow: hidden;
+}
+
+.form-container-full {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.form-content-items {
+  /* background-color: #0ebf13; */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.form-content-items input {
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  width: 20vw;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-form-items-edit {
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #eeff01;
+  color: black;
+  cursor: pointer;
+  width: 130px;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: #daea30;
+  }
+}
+
+.btn-form-items {
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #0ebf13;
+  color: white;
+  cursor: pointer;
+  width: 130px;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: #58c45e;
+  }
+
 }
