@@ -9,7 +9,7 @@ const LIST_MENU = [
     name: 'Inventario',
     subMenu: false,
     subItems: ['Productos', 'Ubicacion', 'Categorias', 'Entrada de Almacen', 'Salida de Almacen', 'Devolucion a Almacen'],
-    linkPage: ['/products']
+    linkPage: ['/products', '/location']
   },
   {
     name: 'Gastos',
