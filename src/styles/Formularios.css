@@ -68,14 +68,14 @@
   border: none;
   padding: 8px;
   border-radius: 5px;
-  background-color: #eeff01;
+  background-color: #fff75a;
   color: black;
   cursor: pointer;
   width: 130px;
   font-size: 1rem;
 
   &:hover {
-    background-color: #daea30;
+    background-color: #f5f085;
   }
 }
 
@@ -91,6 +91,23 @@
 
   &:hover {
     background-color: #58c45e;
+  }
+
+}
+
+.btn-form-items-delete {
+  margin: 0px 10px;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #eb6e0f;
+  color: white;
+  cursor: pointer;
+  width: 130px;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: #fa994f;
   }
 
 }
