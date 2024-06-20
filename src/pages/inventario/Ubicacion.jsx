@@ -14,28 +14,32 @@ const DATA_TABLE_HEADERS = [
     type: 'label',
     namequery: 'id',
     defValue:'',
-    required:true
-  },
+    required:true,   
+    visible:false 
+  }, 
   {
-    name: 'NOMBRE',
+    name: 'NOMBRE', 
     type: 'input',
     namequery: 'name',
     defValue:'',
-    required:true
+    required:true,
+    visible:true
   },
   {
     name: 'DIRECCION',
     type: 'input',
     namequery: 'address',
     defValue:'',
-    required:true
+    required:true,
+    visible:true
   },
   {
     name: 'OBSERVACION',
     type: 'textArea',
     namequery: 'observation',
     defValue:'',
-    required:true
+    required:true,
+    visible:true
   }]
 
 const TITLE_FORM = 'Ubicacion de productos en almacen'
@@ -59,7 +63,7 @@ export const Ubicacion = () => {
       <div className="content-dashboard">
         <FormShTable>
           <FormAdd TITLE_FORM={TITLE_FORM} DATA_TABLE_HEADERS={DATA_TABLE_HEADERS} URL_QUERY={URL_QUERY} />
-          <ShowTable headers={DATA_TABLE_HEADERS} URL_QUERY={URL_QUERY} />
+          <ShowTable  headers={DATA_TABLE_HEADERS} URL_QUERY={URL_QUERY}/>
         </FormShTable>
       </div>
     </>
