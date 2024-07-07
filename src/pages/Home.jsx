@@ -1,15 +1,17 @@
 import { NavBarLeft } from "../components/NavBarLeft"
 import { NavBarUp } from "../components/NavBarUp"
 import { useEffect } from "react"
-import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import { useUserContext } from "../providers/UserContext"
 
 export const Home = () => {
 
-  const user = useSelector(state => state.user)[0]
+  // const user = useSelector(state => state.user)[0]
+  const [userActions] = useUserContext()
+
   const navigate = useNavigate()
   useEffect(() => {
-    if (!user.token) navigate('/')
+    if (!userActions.user.token) navigate('/')
   }, []);
 
   return (

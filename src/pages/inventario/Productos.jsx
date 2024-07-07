@@ -1,11 +1,9 @@
 import { NavBarUp } from '../../components/NavBarUp';
 import { NavBarLeft } from '../../components/NavBarLeft';
-// import { ShowTable } from '../../components/ShowTable';
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import '../../styles/Formularios.css'
-
+import { useUserContext } from '../../providers/UserContext';
 
 // const DATA_TABLE_HEADERS = ['HEADER 1', 'HEADER 2', 'HEADER 3', 'HEADER 4', 'HEADER 5']
 // const DATA_TABLE_ROWS = [
@@ -17,11 +15,11 @@ import '../../styles/Formularios.css'
 // ]
 
 export const Productos = () => {
-  const user = useSelector(state => state.user)[0]
   const navigate = useNavigate()
+  const [userActions] = useUserContext()
 
   useEffect(() => {
-    if (!user.token) navigate('/')
+    if (!userActions.user.token) navigate('/')
   }, []);
 
   return (
@@ -30,22 +28,8 @@ export const Productos = () => {
       <NavBarLeft />
       <div className='content-dashboard'>
         <div className='content-table'>
-          {/* <ShowTable headers={DATA_TABLE_HEADERS} rows={DATA_TABLE_ROWS} /> */}
         </div>
       </div>
     </>
   )
 }
-
-
-// return (
-//   <>
-//     <NavBarUp />
-//     <NavBarLeft />
-//     <div className='content-dashboard'>
-//       <div className='content-table'>
-//         <ShowTable headers={DATA_TABLE_HEADERS} rows={DATA_TABLE_ROWS} />
-//       </div>
-//     </div>
-//   </>
-// )

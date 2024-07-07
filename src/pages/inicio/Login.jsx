@@ -1,15 +1,14 @@
 import { Link, useNavigate } from 'react-router-dom'
 import '../../styles/Login.css'
 import Logot from '../../assets/logot.png'
-import { useDispatch } from 'react-redux'
-import { setUser } from "../../context/userSlice";
 import { useState } from "react";
+import { useUserContext } from "../../providers/UserContext";
 
 
 export const Login = () => {
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
   const [errorMsg, setErrorMsg] = useState('');
+  const [userActions] = useUserContext()
+  const navigate = useNavigate()
 
   const getLogin = async (e) => {
     e.preventDefault()
@@ -30,10 +29,10 @@ export const Login = () => {
       setErrorMsg(data.message)
     }
     if (data.token) {
-      dispatch(setUser({
+      userActions.setUser({
         username: dataForm.username,
         token: data.token
-      }))
+      })
       navigate('/dashboard')
     }
   }
@@ -41,6 +40,7 @@ export const Login = () => {
 
   return (
     <>
+      {/* <p>{userActions.user}</p> */}
       <div className='content-form'>
         <form onSubmit={getLogin} className='login-form'>
           <div className='content-logo'>

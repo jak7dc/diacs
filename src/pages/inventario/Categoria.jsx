@@ -1,11 +1,11 @@
 import { NavBarLeft } from "../../components/NavBarLeft"
 import { NavBarUp } from "../../components/NavBarUp"
-import { useSelector } from "react-redux"
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { ShowTable } from "../../components/ShowTable"
 import { FormAdd } from "../../components/FormAdd"
 import { FormShTable } from "../../providers/FormShTable"
+import { useUserContext } from "../../providers/UserContext";
 
 const DATA_TABLE_HEADERS = [
   {
@@ -37,11 +37,11 @@ const URL_QUERY = `http://localhost:9000/categories`;
 
 
 export const Categoria = () => {
-  const user = useSelector(state => state.user)[0]
+  const [userActions] = useUserContext()
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (!user.token) navigate('/')
+    if (!userActions.user.token) navigate('/')
   }, []);
 
 

@@ -2,10 +2,10 @@ import { NavBarUp } from '../../components/NavBarUp'
 import { NavBarLeft } from '../../components/NavBarLeft'
 import { useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 import { ShowTable } from '../../components/ShowTable'
 import { FormAdd } from '../../components/FormAdd'
 import { FormShTable } from '../../providers/FormShTable'
+import { useUserContext } from "../../providers/UserContext";
 
 
 const DATA_TABLE_HEADERS = [
@@ -47,11 +47,11 @@ const URL_QUERY = `http://localhost:9000/locations`;
 
 export const Ubicacion = () => {
   const navigate = useNavigate()
-  const user = useSelector(state => state.user)[0]
+  const [userActions] = useUserContext()
 
 
   useEffect(() => {
-    if (!user.token) navigate('/')
+    if (!userActions.user.token) navigate('/')
   }, []);
 
 

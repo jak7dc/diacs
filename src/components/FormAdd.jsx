@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
-import { useSelector } from "react-redux"
 import Swal from 'sweetalert2'
 import { useEffect, useState } from "react"
 import { useStateForm, useStateTable } from "../providers/FormShTable"
+import { useUserContext } from '../providers/UserContext'
 
 export const FormAdd = ({ TITLE_FORM = '', DATA_TABLE_HEADERS = [], URL_QUERY = '' }) => {
-  const user = useSelector(state => state.user)[0]
+  const [userActions] = useUserContext()
   const [stateForm, setStateForm] = useStateForm();
+  // eslint-disable-next-line no-unused-vars
   const [stateTable, setStateTable] = useStateTable();
   const [headers, setHeaders] = useState(DATA_TABLE_HEADERS);
 
@@ -56,7 +57,7 @@ export const FormAdd = ({ TITLE_FORM = '', DATA_TABLE_HEADERS = [], URL_QUERY = 
       method: 'GET',
       headers: {
         'Content-Type': 'Application/json',
-        'Authorization': `Bearer ${user.token}`
+        'Authorization': `Bearer ${userActions.user.token}`
       }
     })
     const data = await response.json()
@@ -73,7 +74,7 @@ export const FormAdd = ({ TITLE_FORM = '', DATA_TABLE_HEADERS = [], URL_QUERY = 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${user.token}`,
+        'Authorization': `Bearer ${userActions.user.token}`,
       },
       body: JSON.stringify(body)
     })
@@ -100,7 +101,7 @@ export const FormAdd = ({ TITLE_FORM = '', DATA_TABLE_HEADERS = [], URL_QUERY = 
       method: 'PUT',
       headers: {
         'Content-Type': 'Application/json',
-        'Authorization': `Bearer ${user.token}`
+        'Authorization': `Bearer ${userActions.user.token}`
       },
       body: JSON.stringify(body)
     })

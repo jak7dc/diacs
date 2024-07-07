@@ -1,19 +1,19 @@
 import logot from '../assets/logot.png'
 import '../styles/NavbarUp.css'
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from "react-redux";
 import { useEffect, useState } from 'react'
+import { useUserContext } from '../providers/UserContext';
 
 
 export const NavBarUp = () => {
   const navigate = useNavigate()
   const [userState, setUserState] = useState({});
 
-  const user = useSelector(state => state.user)
+  const [userActions] = useUserContext()
 
 
   useEffect(() => {
-    setUserState(user[0])
+    setUserState(userActions.user)
   }, []);
 
   const loguot = () => {
