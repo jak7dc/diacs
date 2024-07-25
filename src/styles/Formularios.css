@@ -111,3 +111,25 @@
   }
 
 }
+
+.form-input-items input {
+  width: 2vw;
+}
+
+.form-input-items input:nth-child(even) {
+  width: 14.5vw;
+  margin-left: 0.5vw;
+}
+
+.btn-form-foreing {
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  margin-left: 0.5vw;
+  background-color: var(--blue-dark);
+  color: #eee;
+
+  &:hover {
+    background-color: var(--blue-midle);
+  }
+}

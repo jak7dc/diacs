@@ -4,15 +4,106 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../styles/Formularios.css'
 import { useUserContext } from '../../providers/UserContext';
+import { FormShTable } from '../../providers/FormShTable';
+import { ShowTable } from '../../components/ShowTable';
+import { FormAdd } from '../../components/FormAdd';
 
-// const DATA_TABLE_HEADERS = ['HEADER 1', 'HEADER 2', 'HEADER 3', 'HEADER 4', 'HEADER 5']
-// const DATA_TABLE_ROWS = [
-//   ['CEL 1 1', 'CEL 1 2', 'CEL 1 3', 'CEL 1 4', 'CEL 1 5'],
-//   ['CEL 2 1', 'CEL 2 2', 'CEL 2 3', 'CEL 2 4', 'CEL 2 5'],
-//   ['CEL 3 1', 'CEL 3 2', 'CEL 3 3', 'CEL 3 4', 'CEL 3 5'],
-//   ['CEL 4 1', 'CEL 4 2', 'CEL 4 3', 'CEL 4 4', 'CEL 4 5'],
-//   ['CEL 5 1', 'CEL 5 2', 'CEL 5 3', 'CEL 5 4', 'CEL 5 5'],
-// ]
+const DATA_TABLE_HEADERS = [
+  {
+    name: 'DNI',
+    type: 'label',
+    namequery: 'id',
+    defValue: '',
+    required: true,
+    key: null
+  },
+  {
+    name: 'REF',
+    type: 'label',
+    namequery: 'ref',
+    defValue: '',
+    required: false,
+    key: null
+  },
+  {
+    name: 'NOMBRE',
+    type: 'input',
+    namequery: 'name',
+    defValue: '',
+    required: true,
+    key: null
+  },
+  {
+    name: 'DESCRIPCION',
+    type: 'input',
+    namequery: 'description',
+    defValue: '',
+    required: true,
+    key: null
+  },
+  {
+    name: 'PRECIO',
+    type: 'number',
+    namequery: 'price',
+    defValue: '',
+    required: true,
+    key: null
+  },
+  {
+    name: 'EXISTENCIAS',
+    type: 'number',
+    namequery: 'stock',
+    defValue: '',
+    required: true,
+    key: null
+  },
+  {
+    name: 'UND/MEDIDA',
+    type: 'input',
+    namequery: 'measure',
+    defValue: '',
+    required: true,
+    key: null
+  },
+  {
+    name: 'ID UBICACION',
+    type: 'keyForeing',
+    namequery: 'location',
+    defValue: '',
+    required: true,
+    key: {
+      name: 'UBICACION'
+    }
+  },
+  {
+    name: 'UBICACION',
+    type: 'none',
+    namequery: 'location',
+    defValue: 'holis',
+    required: true,
+    key: null
+  },
+  {
+    name: 'ID CATEGORIA',
+    type: 'keyForeing',
+    namequery: 'none',
+    defValue: '',
+    required: false,
+    key: false
+  },
+  {
+    name: 'CATEGORIA',
+    type: 'input',
+    namequery: 'category',
+    defValue: '',
+    required: true,
+    key: false
+  },
+]
+
+const TITLE_FORM = 'Productos'
+const URL_QUERY = `http://localhost:9000/products`;
+
 
 export const Productos = () => {
   const navigate = useNavigate()
@@ -27,8 +118,10 @@ export const Productos = () => {
       <NavBarUp />
       <NavBarLeft />
       <div className='content-dashboard'>
-        <div className='content-table'>
-        </div>
+        <FormShTable>
+          <FormAdd TITLE_FORM={TITLE_FORM} DATA_TABLE_HEADERS={DATA_TABLE_HEADERS} URL_QUERY={URL_QUERY} />
+          <ShowTable headers={DATA_TABLE_HEADERS} URL_QUERY={URL_QUERY} />
+        </FormShTable>
       </div>
     </>
   )

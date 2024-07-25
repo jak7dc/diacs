@@ -28,7 +28,7 @@ export const FormAdd = ({ TITLE_FORM = '', DATA_TABLE_HEADERS = [], URL_QUERY = 
       btnAcction.innerText = 'Editar'
       btnAcction.className = 'btn-form-items-edit'
     }
-
+    // 
     // DETERMINA LOS CAMPOS OBLIGATORIOS
     const headersTemporal = headers
     if (stateForm.estado == 'oculto') {
@@ -168,6 +168,10 @@ export const FormAdd = ({ TITLE_FORM = '', DATA_TABLE_HEADERS = [], URL_QUERY = 
 
 const labelSelector = (item, x) => {
 
+  if (item.type == 'none') return (<input id={`input-item-${x}`}
+    name={item.namequery}
+    placeholder={item.name} />)
+
   if (item.type == 'textArea') return (<textarea id={`input-item-${x}`}
     name={item.namequery}
     placeholder={item.name} />)
@@ -179,4 +183,30 @@ const labelSelector = (item, x) => {
   if (item.type == 'input') return (<input id={`input-item-${x}`}
     name={item.namequery}
     placeholder={item.name} />)
+
+  if (item.type == 'number') return (<input id={`input-item-${x}`}
+    name={item.namequery}
+    placeholder={item.name}
+    type='number'
+  />)
+
+  if (item.type == 'keyForeing') return (
+    <div className='form-input-items'>
+      <input id={`input-item-${x}`}
+        className='id'
+        name={item.namequery}
+        placeholder={''}
+      />
+      <input
+        className='name'
+        placeholder={item.name}
+      />
+      <button
+        onClick={(e) => {
+          e.preventDefault()
+        }}
+        className='btn-form-foreing'
+      >.:.</button>
+    </div>)
+
 }
